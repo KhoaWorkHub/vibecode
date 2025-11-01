@@ -208,7 +208,8 @@ export class ConfigManager {
         if (await fs.pathExists(settingsPath)) {
           try {
             const settings = await fs.readJson(settingsPath);
-            metadata.actualTheme = settings['workbench.colorTheme'] || 'VS Code Default (Dark)';
+            const colorTheme = settings['workbench.colorTheme'];
+            metadata.actualTheme = colorTheme || 'VS Code Default Dark';
           } catch (e) {
             // Ignore errors
           }
