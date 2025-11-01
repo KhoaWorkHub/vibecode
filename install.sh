@@ -146,7 +146,7 @@ setup_repository() {
         git pull origin main 2>/dev/null || true
     else
         print_step "Cloning VibeCode repository..."
-        git clone https://github.com/yourusername/vibecode.git "$INSTALL_DIR" 2>/dev/null || {
+        git clone https://github.com/KhoaWorkHub/vibecode.git "$INSTALL_DIR" 2>/dev/null || {
             # If git clone fails, we're probably running from local directory
             if [ -f "package.json" ] && [ -f "pnpm-workspace.yaml" ]; then
                 print_info "Running from local directory"
@@ -234,8 +234,8 @@ Documentation:
   - Themes: docs/usage/themes-catalog.md
 
 Support:
-  - Issues: https://github.com/yourusername/vibecode/issues
-  - Docs: https://github.com/yourusername/vibecode
+  - Issues: https://github.com/KhoaWorkHub/vibecode/issues
+  - Docs: https://github.com/KhoaWorkHub/vibecode
 
 Enjoy customizing your VS Code!
 ================================================

@@ -156,7 +156,7 @@ vibecode/
 
 ### New Process (1 command):
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/vibecode/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/KhoaWorkHub/vibecode/main/install.sh | bash
 ```
 
 Everything happens automatically!
@@ -272,7 +272,7 @@ Everything happens automatically!
 
 **Before:**
 ```bash
-git clone https://github.com/yourusername/vibecode.git
+git clone https://github.com/KhoaWorkHub/vibecode.git
 cd vibecode
 npm install -g pnpm
 pnpm install
@@ -286,7 +286,7 @@ code --install-extension vibecode-0.1.0.vsix
 
 **After:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/vibecode/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/KhoaWorkHub/vibecode/main/install.sh | bash
 ```
 
 ### Getting Help

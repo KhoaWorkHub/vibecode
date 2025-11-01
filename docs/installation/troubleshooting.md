@@ -371,7 +371,7 @@ sudo yum groupinstall "Development Tools"
 ### Get Help
 
 1. **Check existing issues:**
-   - [GitHub Issues](https://github.com/yourusername/vibecode/issues)
+   - [GitHub Issues](https://github.com/KhoaWorkHub/vibecode/issues)
 
 2. **Create new issue:**
    - Include: OS, VS Code version, Node.js version
@@ -379,7 +379,7 @@ sudo yum groupinstall "Development Tools"
    - Describe steps to reproduce
 
 3. **Community support:**
-   - [GitHub Discussions](https://github.com/yourusername/vibecode/discussions)
+   - [GitHub Discussions](https://github.com/KhoaWorkHub/vibecode/discussions)
 
 ### Collect Debug Information
 

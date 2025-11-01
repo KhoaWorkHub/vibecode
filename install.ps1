@@ -1,7 +1,7 @@
 # VibeCode Installer for Windows (PowerShell)
 # 
 # Usage: 
-#   irm https://raw.githubusercontent.com/yourusername/vibecode/main/install.ps1 | iex
+#   irm https://raw.githubusercontent.com/KhoaWorkHub/vibecode/main/install.ps1 | iex
 #
 # Or download and run:
 #   .\install.ps1
@@ -116,7 +116,7 @@ if (Test-Path $installDir) {
     Pop-Location
 } else {
     Write-Info "Cloning VibeCode repository..."
-    git clone https://github.com/yourusername/vibecode.git $installDir
+    git clone https://github.com/KhoaWorkHub/vibecode.git $installDir
 }
 
 Write-Success "Repository ready at $installDir"

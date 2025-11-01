@@ -32,7 +32,7 @@ Use this checklist to verify everything works before releasing.
 ./install.sh
 
 # Or test download from GitHub (once pushed)
-curl -fsSL https://raw.githubusercontent.com/yourusername/vibecode/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/KhoaWorkHub/vibecode/main/install.sh | bash
 ```
 
 **Verify:**
@@ -51,7 +51,7 @@ curl -fsSL https://raw.githubusercontent.com/yourusername/vibecode/main/install.
 # Test in Docker or VM
 docker run -it ubuntu:22.04 bash
 apt-get update && apt-get install -y curl git
-curl -fsSL https://raw.githubusercontent.com/yourusername/vibecode/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/KhoaWorkHub/vibecode/main/install.sh | bash
 ```
 
 **Verify:**
@@ -72,7 +72,7 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 .\install.ps1
 
 # Or test download (once pushed)
-irm https://raw.githubusercontent.com/yourusername/vibecode/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/KhoaWorkHub/vibecode/main/install.ps1 | iex
 ```
 
 **Verify:**
@@ -366,7 +366,7 @@ vibecode apply tokyo-drift
 ```bash
 # Create repo on GitHub
 # Add remote
-git remote add origin https://github.com/yourusername/vibecode.git
+git remote add origin https://github.com/KhoaWorkHub/vibecode.git
 
 # Push
 git push -u origin main
@@ -379,10 +379,10 @@ git push --tags
 ### 2. Test Installers from GitHub
 ```bash
 # Test macOS/Linux
-curl -fsSL https://raw.githubusercontent.com/yourusername/vibecode/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/KhoaWorkHub/vibecode/main/install.sh | bash
 
 # Test Windows
-irm https://raw.githubusercontent.com/yourusername/vibecode/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/KhoaWorkHub/vibecode/main/install.ps1 | iex
 ```
 
 ### 3. Create GitHub Release

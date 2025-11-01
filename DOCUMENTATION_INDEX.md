@@ -52,7 +52,7 @@ vibecode/
 - ✅ **Contribute code** → [CONTRIBUTING.md](./CONTRIBUTING.md)
 - ✅ **Understand architecture** → [PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md)
 - ✅ **Create a theme** → [CONTRIBUTING.md](./CONTRIBUTING.md#creating-a-new-theme)
-- ✅ **Report a bug** → [GitHub Issues](https://github.com/yourusername/vibecode/issues)
+- ✅ **Report a bug** → [GitHub Issues](https://github.com/KhoaWorkHub/vibecode/issues)
 
 #### Advanced Usage
 - ✅ **Create custom theme** → [README.md](./README.md#creating-custom-themes)
@@ -143,18 +143,18 @@ pnpm lint                       # Lint code
 
 ## 🔗 External Links
 
-- **GitHub Repository**: https://github.com/yourusername/vibecode
-- **Issue Tracker**: https://github.com/yourusername/vibecode/issues
-- **Discussions**: https://github.com/yourusername/vibecode/discussions
+- **GitHub Repository**: https://github.com/KhoaWorkHub/vibecode
+- **Issue Tracker**: https://github.com/KhoaWorkHub/vibecode/issues
+- **Discussions**: https://github.com/KhoaWorkHub/vibecode/discussions
 - **VS Code Marketplace**: (Coming soon)
 - **npm Package**: (Coming soon)
 
 ## 📞 Support
 
-- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/yourusername/vibecode/issues)
-- 💬 **Questions**: [GitHub Discussions](https://github.com/yourusername/vibecode/discussions)
+- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/KhoaWorkHub/vibecode/issues)
+- 💬 **Questions**: [GitHub Discussions](https://github.com/KhoaWorkHub/vibecode/discussions)
 - 📧 **Email**: support@vibecode.dev
-- 🌟 **Feature Requests**: [GitHub Issues](https://github.com/yourusername/vibecode/issues)
+- 🌟 **Feature Requests**: [GitHub Issues](https://github.com/KhoaWorkHub/vibecode/issues)
 
 ## 🎓 Learning Path
 

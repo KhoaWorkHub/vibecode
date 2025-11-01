@@ -20,7 +20,7 @@ Complete installation instructions for VibeCode.
 <parameter name="summary">macOS / Linux</summary>
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/vibecode/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/KhoaWorkHub/vibecode/main/install.sh | bash
 ```
 
 This automatically:
@@ -37,7 +37,7 @@ This automatically:
 <summary>Windows (PowerShell)</summary>
 
 ```powershell
-irm https://raw.githubusercontent.com/yourusername/vibecode/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/KhoaWorkHub/vibecode/main/install.ps1 | iex
 ```
 
 This automatically:
@@ -66,7 +66,7 @@ This automatically:
 ### Step 1: Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/vibecode.git
+git clone https://github.com/KhoaWorkHub/vibecode.git
 cd vibecode
 ```
 
@@ -235,7 +235,7 @@ After installation:
 
 ---
 
-**Need help?** See the full [Troubleshooting Guide](docs/installation/troubleshooting.md) or [create an issue](https://github.com/yourusername/vibecode/issues).
+**Need help?** See the full [Troubleshooting Guide](docs/installation/troubleshooting.md) or [create an issue](https://github.com/KhoaWorkHub/vibecode/issues).
 ```
 
 ### Try the Extension
@@ -456,8 +456,8 @@ You can change the location by setting environment variables (future feature).
 - 📖 [Read the docs](./README.md)
 - 🚀 [Quick start guide](./docs/quick-start.md)
 - 🎨 [Theme catalog](./docs/themes.md)
-- 🐛 [Report issues](https://github.com/yourusername/vibecode/issues)
-- 💬 [Discussions](https://github.com/yourusername/vibecode/discussions)
+- 🐛 [Report issues](https://github.com/KhoaWorkHub/vibecode/issues)
+- 💬 [Discussions](https://github.com/KhoaWorkHub/vibecode/discussions)
 
 ## What's Next?
 

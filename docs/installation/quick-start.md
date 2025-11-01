@@ -20,12 +20,12 @@ Get up and running with VibeCode in 5 minutes.
 
 **macOS / Linux:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/vibecode/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/KhoaWorkHub/vibecode/main/install.sh | bash
 ```
 
 **Windows (PowerShell):**
 ```powershell
-irm https://raw.githubusercontent.com/yourusername/vibecode/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/KhoaWorkHub/vibecode/main/install.ps1 | iex
 ```
 
 This script will automatically:
@@ -43,7 +43,7 @@ This script will automatically:
 
 **Step 1: Clone repository**
 ```bash
-git clone https://github.com/yourusername/vibecode.git
+git clone https://github.com/KhoaWorkHub/vibecode.git
 cd vibecode
 ```
 
@@ -147,7 +147,7 @@ vibecode --help                  # Show all commands
 ### Get Help
 
 - [Troubleshooting](troubleshooting.md) - Common issues
-- [GitHub Issues](https://github.com/yourusername/vibecode/issues)
+- [GitHub Issues](https://github.com/KhoaWorkHub/vibecode/issues)
 
 ---
 

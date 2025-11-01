@@ -6,7 +6,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/vibecode.git
+git clone https://github.com/KhoaWorkHub/vibecode.git
 cd vibecode
 
 # Install pnpm if you don't have it
@@ -262,7 +262,7 @@ ls -la ~/.vibecode/backups/
 - [Read full documentation](./README.md)
 - [Browse theme catalog](./docs/themes.md)
 - [Create your own theme](./CONTRIBUTING.md)
-- [Report issues](https://github.com/yourusername/vibecode/issues)
+- [Report issues](https://github.com/KhoaWorkHub/vibecode/issues)
 
 ---
 

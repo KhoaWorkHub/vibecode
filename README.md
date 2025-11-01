@@ -2,9 +2,9 @@
 
 Transform your VS Code with one command. Apply beautiful themes, layouts, and moods instantly.
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yourusername/vibecode)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/KhoaWorkHub/vibecode)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/yourusername/vibecode)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/KhoaWorkHub/vibecode)
 
 ## Table of Contents
 
@@ -31,7 +31,7 @@ Transform your VS Code with one command. Apply beautiful themes, layouts, and mo
 ### Step 1: Install VibeCode
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/vibecode/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/KhoaWorkHub/vibecode/main/install.sh | bash
 ```
 
 ### Step 2: List available themes
@@ -61,12 +61,12 @@ Done! Your VS Code is now customized.
 
 **macOS / Linux:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/vibecode/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/KhoaWorkHub/vibecode/main/install.sh | bash
 ```
 
 **Windows (PowerShell):**
 ```powershell
-irm https://raw.githubusercontent.com/yourusername/vibecode/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/KhoaWorkHub/vibecode/main/install.ps1 | iex
 ```
 
 **What this does:**
@@ -88,7 +88,7 @@ irm https://raw.githubusercontent.com/yourusername/vibecode/main/install.ps1 | i
 
 **Option 1: Clone and install manually**
 ```bash
-git clone https://github.com/yourusername/vibecode.git
+git clone https://github.com/KhoaWorkHub/vibecode.git
 cd vibecode
 ./install.sh
 ```
@@ -365,7 +365,7 @@ We welcome contributions! Here's how:
 
 **Quick Start:**
 1. Fork the repository
-2. Clone your fork: `git clone https://github.com/yourusername/vibecode.git`
+2. Clone your fork: `git clone https://github.com/KhoaWorkHub/vibecode.git`
 3. Create a branch: `git checkout -b feature/amazing-feature`
 4. Make your changes
 5. Test locally: `pnpm test`
@@ -415,16 +415,16 @@ MIT License - see [LICENSE](LICENSE) file for details.
 **Need Help?**
 - Read the [Documentation](#documentation)
 - Check [Troubleshooting Guide](docs/installation/troubleshooting.md)
-- Search [GitHub Issues](https://github.com/yourusername/vibecode/issues)
-- Ask in [Discussions](https://github.com/yourusername/vibecode/discussions)
+- Search [GitHub Issues](https://github.com/KhoaWorkHub/vibecode/issues)
+- Ask in [Discussions](https://github.com/KhoaWorkHub/vibecode/discussions)
 
 **Found a Bug?**
-- Open an [Issue](https://github.com/yourusername/vibecode/issues/new)
+- Open an [Issue](https://github.com/KhoaWorkHub/vibecode/issues/new)
 - Include your OS, VS Code version, and error message
 - Provide steps to reproduce
 
 **Feature Request?**
-- Open a [Feature Request](https://github.com/yourusername/vibecode/issues/new)
+- Open a [Feature Request](https://github.com/KhoaWorkHub/vibecode/issues/new)
 - Describe the feature and use case
 - Explain why it would be useful
 
