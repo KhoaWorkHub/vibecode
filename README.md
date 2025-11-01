@@ -37,16 +37,18 @@ curl -fsSL https://raw.githubusercontent.com/KhoaWorkHub/vibecode/main/install.s
 ### Step 2: List available themes
 
 ```bash
-vibecode list
+vibecode list    # See all 8 themes including VS Code defaults
 ```
 
 ### Step 3: Apply a theme
 
 ```bash
-vibecode apply tokyo-drift
+vibecode apply tokyo-drift              # Try a custom theme
+# or
+vibecode apply vscode-default           # Return to VS Code default
 ```
 
-Done! Your VS Code is now customized.
+Done! Your VS Code is now customized. Don't like it? Just `vibecode restore` to go back!
 
 </details>
 
@@ -234,10 +236,12 @@ See [Extension Guide](docs/usage/extension-guide.md) for more details.
 ## Available Themes
 
 <details open>
-<summary>Click to expand: 6 built-in themes</summary>
+<summary>Click to expand: 8 built-in themes</summary>
 
 | Theme Name | Style | Mood | Best For | Tags |
 |------------|-------|------|----------|------|
+| **VS Code Default** | Dark Modern | Original | Back to basics | default, original, clean |
+| **VS Code Default Light** | Light Modern | Original | Default bright | default, original, light |
 | Night Hacker | Dark Neon | Night | Late-night coding | dark, neon, hacker |
 | Tokyo Drift | Dark Vibrant | Creative | Colorful work | dark, vibrant, tokyo |
 | Minimal Daylight | Light Clean | Morning | Focused work | light, minimal, clean |
@@ -247,6 +251,11 @@ See [Extension Guide](docs/usage/extension-guide.md) for more details.
 
 **Quick Apply:**
 ```bash
+# Return to VS Code defaults
+vibecode apply vscode-default         # Original dark theme
+vibecode apply vscode-default-light   # Original light theme
+
+# Try custom themes
 vibecode apply night-hacker      # Dark neon cyberpunk
 vibecode apply tokyo-drift       # Vibrant Tokyo-inspired
 vibecode apply minimal-daylight  # Clean light theme
@@ -254,6 +263,8 @@ vibecode apply forest-zen        # Nature-inspired calm
 vibecode apply pastel-dream      # Soft pastel creative
 vibecode apply monochrome-focus  # Pure B&W minimal
 ```
+
+**Pro Tip:** Use `vscode-default` to instantly return to VS Code's original look!
 
 See [Theme Catalog](docs/usage/themes-catalog.md) for detailed descriptions.
 
