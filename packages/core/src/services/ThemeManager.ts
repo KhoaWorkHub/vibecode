@@ -130,7 +130,15 @@ export class ThemeManager {
 
     // Apply settings
     if (options.applySettings && theme.settings) {
-      await configManager.mergeSettings(theme.settings);
+      // For default themes, completely replace settings instead of merging
+      // This ensures we return to exact default state
+      const isDefaultTheme = theme.tags.includes('default') || theme.tags.includes('factory');
+      
+      if (isDefaultTheme) {
+        await configManager.writeSettings(theme.settings);
+      } else {
+        await configManager.mergeSettings(theme.settings);
+      }
     }
 
     // Apply keybindings
