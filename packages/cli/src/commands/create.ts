@@ -90,7 +90,7 @@ export async function createCommand(name?: string, options?: CreateOptions) {
       // Build theme pack
       const theme: ThemePack = {
         id: themeId,
-        name: themeName,
+        name: themeName || themeId,
         description,
         tags,
         author: process.env.USER || 'Unknown',
