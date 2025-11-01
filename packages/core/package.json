@@ -1,0 +1,22 @@
+{
+  "name": "@vibecode/core",
+  "version": "1.0.0",
+  "description": "Core logic for VibeCode theme and layout management",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.10"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "typescript": "^5.3.3",
+    "vitest": "^1.0.4"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "tokyo-drift",
+  "name": "Tokyo Drift",
+  "description": "Inspired by Tokyo's neon-lit streets at night. Vibrant colors and smooth aesthetics for a unique coding experience.",
+  "tags": ["dark", "vibrant", "neon", "night", "tokyo", "colorful"],
+  "preview": "previews/tokyo-drift.png",
+  "author": "VibeCode Team",
+  "version": "1.0.0",
+  "extensions": [
+    "enkia.tokyo-night",
+    "pkief.material-icon-theme"
+  ],
+  "settings": {
+    "workbench.colorTheme": "Tokyo Night",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "'Cascadia Code', 'Fira Code', monospace",
+    "editor.fontSize": 15,
+    "editor.lineHeight": 24,
+    "editor.fontLigatures": true,
+    "editor.cursorStyle": "line",
+    "editor.cursorBlinking": "phase",
+    "editor.renderWhitespace": "selection",
+    "editor.minimap.enabled": true,
+    "terminal.integrated.fontFamily": "'Cascadia Code', monospace",
+    "terminal.integrated.fontSize": 14,
+    "workbench.activityBar.visible": true,
+    "workbench.statusBar.visible": true,
+    "editor.bracketPairColorization.enabled": true,
+    "window.autoDetectColorScheme": false
+  },
+  "layout": {
+    "sidebarLocation": "left",
+    "terminalVisible": false,
+    "editorColumns": 1,
+    "zenMode": false
+  }
+}

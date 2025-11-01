@@ -1,0 +1,38 @@
+{
+  "id": "night-hacker",
+  "name": "Night Hacker",
+  "description": "Dark neon style for late-night coding sessions. Perfect for hackers and night owls who love that cyberpunk aesthetic.",
+  "tags": ["dark", "neon", "night", "hacker", "cyberpunk"],
+  "preview": "previews/night-hacker.png",
+  "author": "VibeCode Team",
+  "version": "1.0.0",
+  "extensions": [
+    "zhuangtongfa.material-theme",
+    "pkief.material-icon-theme",
+    "vscode-icons-team.vscode-icons"
+  ],
+  "settings": {
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "'JetBrains Mono', 'Fira Code', Consolas, monospace",
+    "editor.fontSize": 14,
+    "editor.lineHeight": 22,
+    "editor.fontLigatures": true,
+    "editor.cursorStyle": "line",
+    "editor.cursorBlinking": "smooth",
+    "editor.renderWhitespace": "none",
+    "editor.minimap.enabled": false,
+    "terminal.integrated.fontFamily": "'JetBrains Mono', monospace",
+    "terminal.integrated.fontSize": 13,
+    "workbench.activityBar.visible": true,
+    "workbench.statusBar.visible": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active"
+  },
+  "layout": {
+    "sidebarLocation": "left",
+    "terminalVisible": true,
+    "editorColumns": 1,
+    "zenMode": false
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "monochrome-focus",
+  "name": "Monochrome Focus",
+  "description": "Pure black and white minimalism. Zero distractions, maximum focus for serious coding sessions.",
+  "tags": ["dark", "monochrome", "minimal", "focus", "distraction-free"],
+  "preview": "previews/monochrome-focus.png",
+  "author": "VibeCode Team",
+  "version": "1.0.0",
+  "extensions": [
+    "whizkydee.material-palenight-theme",
+    "vscode-icons-team.vscode-icons"
+  ],
+  "settings": {
+    "workbench.colorTheme": "Palenight Theme",
+    "workbench.iconTheme": "vscode-icons",
+    "editor.fontFamily": "'Monaco', 'Menlo', 'Courier New', monospace",
+    "editor.fontSize": 13,
+    "editor.lineHeight": 20,
+    "editor.fontLigatures": false,
+    "editor.cursorStyle": "block",
+    "editor.cursorBlinking": "solid",
+    "editor.renderWhitespace": "none",
+    "editor.minimap.enabled": false,
+    "terminal.integrated.fontFamily": "'Monaco', monospace",
+    "terminal.integrated.fontSize": 12,
+    "workbench.activityBar.visible": false,
+    "workbench.statusBar.visible": false,
+    "editor.lineNumbers": "relative",
+    "breadcrumbs.enabled": false,
+    "editor.renderLineHighlight": "none"
+  },
+  "layout": {
+    "sidebarLocation": "left",
+    "terminalVisible": false,
+    "editorColumns": 1,
+    "zenMode": true
+  }
+}

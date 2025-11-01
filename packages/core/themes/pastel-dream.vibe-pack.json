@@ -1,0 +1,37 @@
+{
+  "id": "pastel-dream",
+  "name": "Pastel Dream",
+  "description": "Soft pastel colors for a creative, dreamy coding environment. Perfect for frontend developers and designers.",
+  "tags": ["light", "pastel", "creative", "colorful", "morning"],
+  "preview": "previews/pastel-dream.png",
+  "author": "VibeCode Team",
+  "version": "1.0.0",
+  "extensions": [
+    "sdras.night-owl",
+    "pkief.material-icon-theme"
+  ],
+  "settings": {
+    "workbench.colorTheme": "Night Owl Light",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "'Dank Mono', 'Operator Mono', 'Fira Code', monospace",
+    "editor.fontSize": 15,
+    "editor.lineHeight": 26,
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "400",
+    "editor.cursorStyle": "line",
+    "editor.cursorBlinking": "expand",
+    "editor.renderWhitespace": "none",
+    "editor.minimap.enabled": true,
+    "terminal.integrated.fontFamily": "'Fira Code', monospace",
+    "terminal.integrated.fontSize": 14,
+    "workbench.activityBar.visible": true,
+    "workbench.statusBar.visible": true,
+    "editor.bracketPairColorization.enabled": true
+  },
+  "layout": {
+    "sidebarLocation": "left",
+    "terminalVisible": false,
+    "editorColumns": 1,
+    "zenMode": false
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "forest-zen",
+  "name": "Forest Zen",
+  "description": "Nature-inspired calm theme with earthy tones. Perfect for zen-like focus and deep work sessions.",
+  "tags": ["dark", "nature", "chill", "focus", "zen", "green"],
+  "preview": "previews/forest-zen.png",
+  "author": "VibeCode Team",
+  "version": "1.0.0",
+  "extensions": [
+    "sainnhe.everforest",
+    "pkief.material-icon-theme"
+  ],
+  "settings": {
+    "workbench.colorTheme": "Everforest Dark",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "'IBM Plex Mono', 'Source Code Pro', monospace",
+    "editor.fontSize": 14,
+    "editor.lineHeight": 22,
+    "editor.fontLigatures": false,
+    "editor.cursorStyle": "block",
+    "editor.cursorBlinking": "solid",
+    "editor.renderWhitespace": "none",
+    "editor.minimap.enabled": false,
+    "terminal.integrated.fontFamily": "'IBM Plex Mono', monospace",
+    "terminal.integrated.fontSize": 13,
+    "workbench.activityBar.visible": true,
+    "workbench.statusBar.visible": true,
+    "editor.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true
+  },
+  "layout": {
+    "sidebarLocation": "left",
+    "terminalVisible": true,
+    "editorColumns": 1,
+    "zenMode": false
+  }
+}

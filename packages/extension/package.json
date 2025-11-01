@@ -1,0 +1,106 @@
+{
+  "name": "@vibecode/extension",
+  "displayName": "VibeCode",
+  "description": "The Ultimate VSCode Customization Tool - Apply themes and layouts with one click",
+  "version": "1.0.0",
+  "publisher": "vibecode",
+  "icon": "assets/icon.png",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes",
+    "Other"
+  ],
+  "keywords": [
+    "theme",
+    "layout",
+    "customization",
+    "ui",
+    "vibe"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vibecode.showGallery",
+        "title": "VibeCode: Show Theme Gallery",
+        "icon": "$(paintcan)"
+      },
+      {
+        "command": "vibecode.applyTheme",
+        "title": "VibeCode: Apply Theme"
+      },
+      {
+        "command": "vibecode.createTheme",
+        "title": "VibeCode: Create Custom Theme"
+      },
+      {
+        "command": "vibecode.restoreBackup",
+        "title": "VibeCode: Restore Backup"
+      },
+      {
+        "command": "vibecode.refreshThemes",
+        "title": "VibeCode: Refresh Themes",
+        "icon": "$(refresh)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vibecode-sidebar",
+          "title": "VibeCode",
+          "icon": "assets/sidebar-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "vibecode-sidebar": [
+        {
+          "id": "vibecode.themesView",
+          "name": "Theme Gallery"
+        },
+        {
+          "id": "vibecode.backupsView",
+          "name": "Backups"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "vibecode.refreshThemes",
+          "when": "view == vibecode.themesView",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "vibecode.applyTheme",
+          "when": "view == vibecode.themesView",
+          "group": "inline"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run build",
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "package": "vsce package",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@vibecode/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@vscode/vsce": "^2.22.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.0.4"
+  }
+}

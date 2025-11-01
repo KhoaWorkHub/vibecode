@@ -1,0 +1,30 @@
+{
+  "name": "@vibecode/cli",
+  "version": "1.0.0",
+  "description": "VibeCode CLI - Command-line tool for theme management",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "vibecode": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@vibecode/core": "workspace:*",
+    "commander": "^11.1.0",
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.6",
+    "ora": "^5.4.1",
+    "cli-table3": "^0.6.3",
+    "boxen": "^5.1.2"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^8.2.10",
+    "typescript": "^5.3.3",
+    "vitest": "^1.0.4"
+  }
+}
