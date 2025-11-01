@@ -5,7 +5,7 @@
 
 import { Command } from 'commander';
 import chalk from 'chalk';
-import { profileManager } from '@vibecode/core';
+import { profileManager, profileSharing } from '@vibecode/core';
 import type { ProfileSwitchOptions, ProfileSaveOptions } from '@vibecode/core';
 
 /**
@@ -400,6 +400,74 @@ async function manageProtectedExtensions(action: 'list' | 'add' | 'remove', exte
 }
 
 /**
+ * Share a profile via GitHub Gist
+ */
+async function shareProfile(name: string) {
+  try {
+    console.log(chalk.blue(`📤 Sharing profile "${name}"...`));
+    
+    const shareCode = await profileSharing.shareProfile(name);
+    
+    console.log(chalk.green('\n✓ Profile shared successfully!\n'));
+    console.log(chalk.cyan.bold(`  Share Code: ${shareCode}\n`));
+    console.log(chalk.gray('Anyone can import this profile with:'));
+    console.log(chalk.white(`  vibecode profile import ${shareCode}\n`));
+    console.log(chalk.gray('This code is permanent and works across all machines.'));
+  } catch (error) {
+    console.error(chalk.red('✗ Failed to share profile:'), error);
+    process.exit(1);
+  }
+}
+
+/**
+ * Import a profile from a share code
+ */
+async function importProfile(shareCode: string, options: { name?: string; yes?: boolean }) {
+  try {
+    console.log(chalk.blue(`📥 Importing profile from ${shareCode}...`));
+    
+    // Get profile info first
+    const info = await profileSharing.getProfileInfo(shareCode);
+    
+    console.log(chalk.cyan('\n📋 Profile Information:'));
+    console.log(chalk.gray(`  Name: ${info.name}`));
+    console.log(chalk.gray(`  Description: ${info.description}`));
+    console.log(chalk.gray(`  Extensions: ${info.extensionCount}`));
+    console.log(chalk.gray(`  Theme: ${info.theme || 'N/A'}`));
+    console.log(chalk.gray(`  Created: ${new Date(info.createdAt).toLocaleString()}\n`));
+    
+    // Confirm if not skipped
+    if (!options.yes) {
+      const readline = await import('readline');
+      const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+      });
+
+      const answer = await new Promise<string>((resolve) => {
+        rl.question(chalk.yellow('Import this profile? (y/N): '), resolve);
+      });
+      rl.close();
+
+      if (answer.toLowerCase() !== 'y') {
+        console.log(chalk.gray('Cancelled.'));
+        return;
+      }
+    }
+    
+    // Import profile
+    const profile = await profileSharing.importProfile(shareCode, options.name);
+    
+    console.log(chalk.green(`\n✓ Profile imported as "${profile.name}"!`));
+    console.log(chalk.gray('\nTo switch to this profile:'));
+    console.log(chalk.white(`  vibecode profile switch ${profile.name}\n`));
+  } catch (error) {
+    console.error(chalk.red('✗ Failed to import profile:'), error);
+    process.exit(1);
+  }
+}
+
+/**
  * Register profile command and subcommands
  */
 export function registerProfileCommand(program: Command) {
@@ -466,6 +534,24 @@ export function registerProfileCommand(program: Command) {
     .option('-f, --force', 'Skip confirmation prompt')
     .action((name: string, options: { force?: boolean }) => {
       deleteProfile(name, options);
+    });
+
+  // Share profile
+  profile
+    .command('share')
+    .description('Share a profile via GitHub Gist (get share code)')
+    .argument('<name>', 'Profile name to share')
+    .action(shareProfile);
+
+  // Import profile
+  profile
+    .command('import')
+    .description('Import a profile from a share code')
+    .argument('<code>', 'Share code (e.g., VIBE-abc123...)')
+    .option('-n, --name <name>', 'Custom name for imported profile')
+    .option('-y, --yes', 'Skip confirmation prompt')
+    .action((code: string, options: { name?: string; yes?: boolean }) => {
+      importProfile(code, options);
     });
 
   // Diff profiles

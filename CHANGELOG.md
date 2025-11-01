@@ -5,6 +5,77 @@ All notable changes to VibeCode will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2025-11-02
+
+### Added - Profile Sharing 🚀
+
+**Share Your Complete VS Code Setup With Anyone**
+
+- **ProfileSharing Service** - Share profiles via GitHub Gist
+  - `shareProfile(name)` - Upload profile to GitHub Gist
+  - `importProfile(shareCode)` - Download and import profile
+  - `getProfileInfo(shareCode)` - Preview profile before importing
+  - GitHub token support (environment variable or config file)
+
+- **Share Code System** - Simple VIBE-<gist-id> format
+  - Human-readable share codes (e.g., VIBE-abc123def456...)
+  - Permanent links (never expire)
+  - Public GitHub Gists (free, reliable storage)
+  - Cross-platform compatibility
+
+- **CLI Commands** - New sharing commands
+  - `vibecode profile share <name>` - Generate share code
+  - `vibecode profile import <code>` - Import from share code
+  - Options: `--name` (custom name), `-y` (skip confirmation)
+
+**Features:**
+- ✅ Works with curl install (no source code needed)
+- ✅ Share unlimited profiles (GitHub Gist is free)
+- ✅ Cross-machine sync (any computer, any OS)
+- ✅ Secure (uses GitHub authentication)
+- ✅ Fast (direct API, no file transfers)
+- ✅ Preview before import (see what you're getting)
+
+**Setup (One-Time):**
+```bash
+# Get GitHub token from: https://github.com/settings/tokens
+# Scope: gist
+
+# Option 1: Environment variable
+export GITHUB_TOKEN=ghp_your_token
+
+# Option 2: Config file
+echo "ghp_your_token" > ~/.vibecode/github-token
+```
+
+**Usage Example:**
+```bash
+# Share your setup
+vibecode profile save my-setup
+vibecode profile share my-setup
+# → VIBE-abc123def456...
+
+# Import on any machine
+vibecode profile import VIBE-abc123def456...
+# → Downloads profile, installs extensions, applies settings
+```
+
+**Documentation:**
+- New [PROFILE_SHARING_GUIDE.md](PROFILE_SHARING_GUIDE.md) - Complete sharing guide
+- New [PROFILE_SHARING_IMPLEMENTATION.md](PROFILE_SHARING_IMPLEMENTATION.md) - Technical details
+- Test script: `test-profile-sharing.sh` - Automated testing
+
+**Dependencies:**
+- Added `axios` ^1.6.2 for GitHub API communication
+
+**Use Cases:**
+- 🏢 Team onboarding (share company setup)
+- 💻 Personal sync (laptop ↔ desktop)
+- 🤖 AI customization sharing (share agent's work)
+- 🎓 Education (teachers share environment with students)
+
+---
+
 ## [1.1.0] - 2025-11-02
 
 ### Added - Profile System 🆕

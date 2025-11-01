@@ -1,19 +1,39 @@
 # VibeCode - The Ultimate VS Code Customization Tool
 
-Transform your VS Code with one command. Apply beautiful themes, layouts, and moods instantly. **NEW in v1.1.0**: Complete Profile System for managing different VS Code environments! 🆕
+Transform your VS Code with one command. Apply beautiful themes, layouts, and moods instantly. **NEW in v1.2.0**: Share your complete setup with anyone using simple share codes! 🚀
 
-[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/KhoaWorkHub/vibecode)
+[![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)](https://github.com/KhoaWorkHub/vibecode)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/KhoaWorkHub/vibecode)
 
-## What's New in v1.1.0 🎉
+## What's New in v1.2.0 🎉
+
+**Profile Sharing** - Share your complete VS Code setup with a simple code:
+- 📤 Share profiles via GitHub Gist (no files to transfer!)
+- 📥 Import with a simple code: `vibecode profile import VIBE-abc123`
+- 🌍 Works across all machines (no source code needed)
+- 🔒 Secure: Uses GitHub's free Gist service
+- ⚡ Fast: 2 commands to share and sync 100+ extensions
+
+```bash
+# Share your setup
+vibecode profile share my-awesome-setup
+# → VIBE-abc123def456...
+
+# Anyone can import it
+vibecode profile import VIBE-abc123def456...
+# → Done! All extensions + settings synced
+```
+
+[Read the Profile Sharing Guide →](PROFILE_SHARING_GUIDE.md)
+
+### Previous: v1.1.0
 
 **Profile System** - Save and switch between complete VS Code environments:
 - 💾 Save snapshots of settings + extensions + keybindings
 - 🔄 Switch between work/personal/experimental setups
 - 🛡️ Protected extensions never get removed
 - 🔍 Preview changes with dry-run mode
-- 🎯 Perfect for experimenting without fear!
 
 [Read the Complete Profile Guide →](PROFILE_GUIDE.md)
 
