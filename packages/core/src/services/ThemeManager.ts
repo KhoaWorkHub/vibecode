@@ -29,7 +29,7 @@ export class ThemeManager {
 
     // Load built-in themes
     const builtInThemes = await this.loadThemesFromDirectory(
-      path.join(__dirname, '../../themes')
+      path.join(__dirname, '../../../themes')
     );
     themes.push(...builtInThemes);
 
