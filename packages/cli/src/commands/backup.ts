@@ -10,10 +10,9 @@ export async function backupCommand() {
     spinner.succeed('Backup created successfully');
 
     const backupName = backupPath.split('/').pop();
-    const timestamp = backupName?.replace('backup-', '').replace(/-/g, ':');
 
     console.log(chalk.green('\n✨ Configuration backed up!'));
-    console.log(chalk.gray(`   Timestamp: ${timestamp}`));
+    console.log(chalk.gray(`   Backup: ${backupName}`));
     console.log(chalk.gray(`   Location: ${backupPath}`));
     console.log(chalk.cyan(`\nUse ${chalk.bold('vibecode restore')} to restore from this backup.`));
   } catch (error: any) {
