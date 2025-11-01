@@ -325,7 +325,7 @@ function getGalleryWebviewContent(themes: any[]): string {
         <div class="theme-name">${theme.name}</div>
         <div class="theme-description">${theme.description}</div>
         <div class="theme-tags">
-          ${theme.tags.map((tag) => `<span class="tag">${tag}</span>`).join('')}
+          ${theme.tags.map((tag: string) => `<span class="tag">${tag}</span>`).join('')}
         </div>
         <button class="apply-button" onclick="applyTheme('${theme.id}')">
           Apply Theme

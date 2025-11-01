@@ -7,6 +7,12 @@ dist/
 out/
 build/
 *.vsix
+*.js
+*.js.map
+*.d.ts
+*.d.ts.map
+!vitest.config.ts
+!*.config.js
 
 # Logs
 logs/
