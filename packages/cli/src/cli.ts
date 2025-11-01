@@ -17,7 +17,7 @@ const program = new Command();
 program
   .name('vibecode')
   .description('✨ VibeCode - The Ultimate VSCode Customization Tool')
-  .version('1.0.0');
+  .version('1.1.0');
 
 // List themes
 program

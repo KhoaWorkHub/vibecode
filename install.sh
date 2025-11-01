@@ -167,9 +167,10 @@ build_project() {
     print_step "Installing dependencies..."
     pnpm install --silent 2>/dev/null || pnpm install
 
-    print_step "Building packages..."
-    pnpm build 2>/dev/null || {
-        print_warning "Build had warnings, but continuing..."
+    print_step "Building packages (core + CLI)..."
+    pnpm build:essentials 2>/dev/null || {
+        print_warning "Build had warnings, trying full build..."
+        pnpm build 2>/dev/null || print_warning "Some packages failed to build (non-critical)"
     }
 
     print_success "Build complete"

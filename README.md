@@ -2,7 +2,7 @@
 
 Transform your VS Code with one command. Apply beautiful themes, layouts, and moods instantly.
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/KhoaWorkHub/vibecode)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/KhoaWorkHub/vibecode)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/KhoaWorkHub/vibecode)
 
@@ -34,21 +34,31 @@ Transform your VS Code with one command. Apply beautiful themes, layouts, and mo
 curl -fsSL https://raw.githubusercontent.com/KhoaWorkHub/vibecode/main/install.sh | bash
 ```
 
-### Step 2: List available themes
+### Step 2: Try themes OR save your current setup
 
+**Option A: Apply a theme**
 ```bash
-vibecode list    # See all 8 themes including VS Code defaults
-```
-
-### Step 3: Apply a theme
-
-```bash
+vibecode list                           # See all 9 themes
 vibecode apply tokyo-drift              # Try a custom theme
-# or
-vibecode apply vscode-default           # Return to VS Code default
 ```
 
-Done! Your VS Code is now customized. Don't like it? Just `vibecode restore` to go back!
+**Option B: Save your environment** 🆕
+```bash
+vibecode profile save my-setup --with-theme  # Snapshot current setup
+vibecode profile list                        # View all profiles
+```
+
+### Step 3: Experiment fearlessly!
+
+```bash
+# Try new extensions, change settings, customize everything
+# Made a mess? No problem!
+vibecode restore                        # Restore from backup
+# or
+vibecode profile switch my-setup        # Switch back to saved profile
+```
+
+Done! Your VS Code is now customized. And you can always go back!
 
 </details>
 

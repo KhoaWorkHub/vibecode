@@ -1,7 +1,7 @@
 {
   "name": "@vibecode/core",
-  "version": "1.0.0",
-  "description": "Core logic for VibeCode theme and layout management",
+  "version": "1.1.0",
+  "description": "Core logic for VibeCode theme, profile, and layout management",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "scripts": {
