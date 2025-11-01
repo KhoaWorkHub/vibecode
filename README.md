@@ -8,24 +8,34 @@ Transform your VS Code with one command. Apply beautiful themes, layouts, and mo
 
 ## What's New in v1.2.0 🎉
 
-**Profile Sharing** - Share your complete VS Code setup with a simple code:
+**Profile Sharing with Interactive Setup** - Share your complete VS Code setup with a simple code:
 - 📤 Share profiles via GitHub Gist (no files to transfer!)
+- 🎯 **Interactive token setup** - CLI guides you through GitHub token creation (2 minutes, one-time)
+- 🌐 **Auto-open browser** - No manual URL copying needed
 - 📥 Import with a simple code: `vibecode profile import VIBE-abc123`
 - 🌍 Works across all machines (no source code needed)
 - 🔒 Secure: Uses GitHub's free Gist service
-- ⚡ Fast: 2 commands to share and sync 100+ extensions
+- ⚡ Fast: After setup, instant sharing forever
 
 ```bash
-# Share your setup
+# First time: Interactive setup (auto-opens browser)
 vibecode profile share my-awesome-setup
+# → Guides you to create GitHub token
+# → Browser opens automatically
+# → Token saved for future use
 # → VIBE-abc123def456...
+
+# Next time: Instant share (no prompts)
+vibecode profile share another-setup
+# → VIBE-xyz789...
 
 # Anyone can import it
 vibecode profile import VIBE-abc123def456...
 # → Done! All extensions + settings synced
 ```
 
-[Read the Profile Sharing Guide →](PROFILE_SHARING_GUIDE.md)
+[Read the Profile Sharing Guide →](PROFILE_SHARING_GUIDE.md)  
+[Interactive Setup Demo →](INTERACTIVE_TOKEN_SETUP.md)
 
 ### Previous: v1.1.0
 
