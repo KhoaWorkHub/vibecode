@@ -180,6 +180,10 @@ build_project() {
 link_cli() {
     print_step "Setting up CLI..."
     cd packages/cli
+    
+    # Ensure CLI is executable
+    chmod +x dist/cli.js
+    
     npm link >/dev/null 2>&1 || {
         print_warning "npm link requires sudo on some systems"
         sudo npm link
