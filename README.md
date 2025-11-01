@@ -1,13 +1,27 @@
 # VibeCode - The Ultimate VS Code Customization Tool
 
-Transform your VS Code with one command. Apply beautiful themes, layouts, and moods instantly.
+Transform your VS Code with one command. Apply beautiful themes, layouts, and moods instantly. **NEW in v1.1.0**: Complete Profile System for managing different VS Code environments! 🆕
 
 [![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/KhoaWorkHub/vibecode)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/KhoaWorkHub/vibecode)
 
+## What's New in v1.1.0 🎉
+
+**Profile System** - Save and switch between complete VS Code environments:
+- 💾 Save snapshots of settings + extensions + keybindings
+- 🔄 Switch between work/personal/experimental setups
+- 🛡️ Protected extensions never get removed
+- 🔍 Preview changes with dry-run mode
+- 🎯 Perfect for experimenting without fear!
+
+[Read the Complete Profile Guide →](PROFILE_GUIDE.md)
+
+---
+
 ## Table of Contents
 
+- [What's New](#whats-new-in-v110-)
 - [Quick Start](#quick-start)
 - [Installation](#installation)
   - [One-Command Install](#one-command-install-recommended)
@@ -27,7 +41,6 @@ Transform your VS Code with one command. Apply beautiful themes, layouts, and mo
 
 <details open>
 <summary>Get started in 30 seconds</summary>
-
 ### Step 1: Install VibeCode
 
 ```bash
