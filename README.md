@@ -429,8 +429,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 - Explain why it would be useful
 
 **Contact:**
-- Email: support@vibecode.dev
-- GitHub: [@yourusername](https://github.com/yourusername)
+- Email: tkhoa7815@gmail.com
+- GitHub: [@KhoaWorkHub](https://github.com/KhoaWorkHub)
 
 </details>
 
