@@ -89,6 +89,20 @@ export class PathManager {
   }
 
   /**
+   * Get VibeCode profiles directory
+   */
+  getProfilesDir(): string {
+    return path.join(this.getVibeCodeDataDir(), 'profiles');
+  }
+
+  /**
+   * Get VibeCode config directory
+   */
+  getConfigDir(): string {
+    return path.join(this.getVibeCodeDataDir(), 'config');
+  }
+
+  /**
    * Initialize VibeCode directories
    */
   async initializeDirectories(): Promise<void> {
@@ -97,6 +111,8 @@ export class PathManager {
       this.getBackupsDir(),
       this.getThemesDir(),
       this.getCustomThemesDir(),
+      this.getProfilesDir(),
+      this.getConfigDir(),
     ];
 
     for (const dir of dirs) {

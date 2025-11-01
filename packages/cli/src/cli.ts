@@ -10,6 +10,7 @@ import { searchCommand } from './commands/search';
 import { backupCommand } from './commands/backup';
 import { importCommand } from './commands/import';
 import { exportCommand } from './commands/export';
+import { registerProfileCommand } from './commands/profile';
 
 const program = new Command();
 
@@ -73,15 +74,22 @@ program
   .description('📤 Export a theme to a .vibe-pack.json file')
   .action(exportCommand);
 
+// Profile management
+registerProfileCommand(program);
+
 // Error handling
 program.exitOverride();
 
 try {
   program.parse(process.argv);
-} catch (error: any) {
-  if (error.code !== 'commander.help' && error.code !== 'commander.version') {
-    console.error(chalk.red('❌ Error:'), error.message);
-    process.exit(1);
+} catch (error: unknown) {
+  if (typeof error === 'object' && error !== null && 'code' in error) {
+    const errorCode = (error as { code: string }).code;
+    if (errorCode !== 'commander.help' && errorCode !== 'commander.version') {
+      const errorMessage = 'message' in error ? String((error as { message: unknown }).message) : 'Unknown error';
+      console.error(chalk.red('❌ Error:'), errorMessage);
+      process.exit(1);
+    }
   }
 }
 
