@@ -122,6 +122,14 @@ npx vibecode apply tokyo-drift
 - Import and export themes
 - Tag-based filtering and search
 
+**Profile System** 🆕
+- Save complete VS Code environments (settings + extensions + keybindings)
+- Switch between different setups with confidence
+- Strict extension isolation for clean environments
+- Protected extensions support (never remove critical tools)
+- Auto-backup before every switch
+- Perfect for experimenting without fear
+
 **Safety & Backup**
 - Automatic backups before changes
 - Easy restore to previous state
@@ -135,16 +143,18 @@ npx vibecode apply tokyo-drift
 - Consistent experience everywhere
 
 **Developer Tools**
-- Full-featured CLI with 8 commands
+- Full-featured CLI with 10+ commands
 - VS Code extension with sidebar
 - Theme gallery with search
 - Interactive theme creator
+- Profile management interface
 
 **Extension Management**
 - Auto-installs required extensions
 - Manages VS Code settings
 - Handles keybindings
 - Configures layout options
+- Programmatic extension install/uninstall
 
 </details>
 
@@ -190,13 +200,34 @@ vibecode restore --list          # List all backups
 vibecode restore                 # Interactive restore
 ```
 
+**Profile management:** 🆕
+```bash
+# Save complete environment snapshots
+vibecode profile save <name>                    # Save current setup
+vibecode profile save react-dev --with-theme    # Include theme
+
+# Switch between environments
+vibecode profile switch <name>                  # Switch profile
+vibecode profile switch <name> --dry-run        # Preview changes
+
+# Manage profiles
+vibecode profile list                           # List all profiles
+vibecode profile show <name>                    # Show details
+vibecode profile diff <target>                  # Compare setups
+vibecode profile delete <name>                  # Delete profile
+
+# Protected extensions (never removed)
+vibecode profile protected list                 # List protected
+vibecode profile protected add github.copilot   # Add to protected
+```
+
 **Import and export:**
 ```bash
 vibecode import theme.json       # Import theme
 vibecode export tokyo-drift      # Export theme
 ```
 
-See [CLI Guide](docs/usage/cli-guide.md) for detailed documentation.
+See [CLI Guide](docs/usage/cli-guide.md) and **[Profile Guide](PROFILE_GUIDE.md)** for detailed documentation.
 
 </details>
 
@@ -286,6 +317,9 @@ See [Theme Catalog](docs/usage/themes-catalog.md) for detailed descriptions.
 - [CLI Commands](docs/usage/cli-guide.md) - Complete CLI reference
 - [VS Code Extension](docs/usage/extension-guide.md) - Extension usage guide
 - [Theme Catalog](docs/usage/themes-catalog.md) - All themes with descriptions
+- **[Profile Guide](PROFILE_GUIDE.md)** 🆕 - Complete VS Code environment management
+- [Backup & Restore Guide](BACKUP_RESTORE_GUIDE.md) - Manual backup/restore
+- [Default Themes Guide](DEFAULT_THEMES_GUIDE.md) - VS Code default themes
 
 **Development:**
 - [Contributing Guide](CONTRIBUTING.md) - How to contribute
