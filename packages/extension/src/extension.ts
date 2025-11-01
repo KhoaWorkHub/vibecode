@@ -126,8 +126,9 @@ export async function activate(context: vscode.ExtensionContext) {
     }
 
     const items = backups.map((b) => ({
-      label: b.replace('backup-', '').replace(/-/g, ':'),
-      description: 'Configuration backup',
+      label: b.themeName,
+      description: b.date,
+      detail: `Restore settings from before applying this theme`,
       backup: b,
     }));
 
@@ -138,19 +139,14 @@ export async function activate(context: vscode.ExtensionContext) {
     if (!selected) return;
 
     const confirm = await vscode.window.showWarningMessage(
-      'This will overwrite your current VSCode configuration. Continue?',
+      `Restore settings from before applying "${selected.backup.themeName}"?`,
       { modal: true },
       'Restore'
     );
 
     if (confirm !== 'Restore') return;
 
-    const backupPath = require('path').join(
-      pathManager.getBackupsDir(),
-      selected.backup
-    );
-
-    await configManager.restoreConfiguration(backupPath);
+    await configManager.restoreConfiguration(selected.backup.path);
 
     vscode.window.showInformationMessage(
       '✨ Configuration restored! Please reload VSCode.',

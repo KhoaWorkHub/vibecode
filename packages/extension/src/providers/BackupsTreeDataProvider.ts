@@ -24,12 +24,11 @@ export class BackupsTreeDataProvider implements vscode.TreeDataProvider<BackupTr
 }
 
 class BackupTreeItem extends vscode.TreeItem {
-  constructor(public readonly backup: string) {
-    const timestamp = backup.replace('backup-', '').replace(/-/g, ':');
-    super(timestamp, vscode.TreeItemCollapsibleState.None);
+  constructor(public readonly backup: { name: string; path: string; themeName: string; timestamp: string; date: string }) {
+    super(backup.themeName, vscode.TreeItemCollapsibleState.None);
 
-    this.description = 'Configuration backup';
-    this.tooltip = `Backup created at: ${timestamp}`;
+    this.description = backup.date;
+    this.tooltip = `Backup from before applying: ${backup.themeName}`;
     this.contextValue = 'backup';
     this.iconPath = new vscode.ThemeIcon('archive');
 

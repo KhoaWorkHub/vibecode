@@ -107,11 +107,23 @@ export class ConfigManager {
 
   /**
    * Backup current configuration
+   * @param themeName - Optional theme name for better organization
    */
-  async backupConfiguration(): Promise<string> {
+  async backupConfiguration(themeName?: string): Promise<string> {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
     const backupDir = pathManager.getBackupsDir();
-    const backupPath = `${backupDir}/backup-${timestamp}`;
+    
+    // Use theme-based naming if provided, otherwise use timestamp
+    const backupName = themeName 
+      ? `before-${themeName.toLowerCase().replace(/\s+/g, '-')}`
+      : `manual-backup-${timestamp}`;
+    
+    const backupPath = `${backupDir}/${backupName}`;
+
+    // If backup exists for this theme, remove it (keep only latest)
+    if (themeName && await fs.pathExists(backupPath)) {
+      await fs.remove(backupPath);
+    }
 
     await fs.ensureDir(backupPath);
 
@@ -126,7 +138,9 @@ export class ConfigManager {
       fs.writeJson(
         `${backupPath}/metadata.json`,
         {
+          themeName: themeName || 'Manual Backup',
           timestamp,
+          date: new Date().toLocaleString(),
           platform: process.platform,
           nodeVersion: process.version,
         },
@@ -149,9 +163,15 @@ export class ConfigManager {
   }
 
   /**
-   * List all backups
+   * List all backups with metadata
    */
-  async listBackups(): Promise<string[]> {
+  async listBackups(): Promise<Array<{
+    name: string;
+    path: string;
+    themeName: string;
+    timestamp: string;
+    date: string;
+  }>> {
     const backupDir = pathManager.getBackupsDir();
 
     if (!(await fs.pathExists(backupDir))) {
@@ -159,8 +179,62 @@ export class ConfigManager {
     }
 
     const entries = await fs.readdir(backupDir);
-    const backups = entries.filter((entry) => entry.startsWith('backup-'));
-    return backups.sort().reverse(); // Most recent first
+    const backups = entries.filter((entry) => 
+      entry.startsWith('before-') || entry.startsWith('manual-backup-')
+    );
+
+    const backupList = await Promise.all(
+      backups.map(async (backup) => {
+        const backupPath = `${backupDir}/${backup}`;
+        const metadataPath = `${backupPath}/metadata.json`;
+        
+        let metadata = {
+          themeName: backup,
+          timestamp: '',
+          date: 'Unknown',
+        };
+
+        if (await fs.pathExists(metadataPath)) {
+          const meta = await fs.readJson(metadataPath);
+          metadata = {
+            themeName: meta.themeName || backup,
+            timestamp: meta.timestamp || '',
+            date: meta.date || new Date(meta.timestamp).toLocaleString() || 'Unknown',
+          };
+        }
+
+        return {
+          name: backup,
+          path: backupPath,
+          ...metadata,
+        };
+      })
+    );
+
+    // Sort by timestamp (most recent first)
+    return backupList.sort((a, b) => 
+      b.timestamp.localeCompare(a.timestamp)
+    );
+  }
+
+  /**
+   * Clean up old timestamp-based backups (migration helper)
+   */
+  async cleanupOldBackups(): Promise<number> {
+    const backupDir = pathManager.getBackupsDir();
+
+    if (!(await fs.pathExists(backupDir))) {
+      return 0;
+    }
+
+    const entries = await fs.readdir(backupDir);
+    const oldBackups = entries.filter((entry) => entry.startsWith('backup-'));
+
+    for (const backup of oldBackups) {
+      await fs.remove(`${backupDir}/${backup}`);
+    }
+
+    return oldBackups.length;
   }
 }
 

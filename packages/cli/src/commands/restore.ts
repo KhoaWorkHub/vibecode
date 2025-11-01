@@ -23,13 +23,16 @@ export async function restoreCommand(backup?: string, options?: RestoreOptions) 
       }
 
       console.log(chalk.cyan('\n📦 Available Backups:\n'));
-      backups.forEach((b, index) => {
-        const timestamp = b.replace('backup-', '').replace(/-/g, ':');
-        console.log(chalk.gray(`${index + 1}.`), chalk.white(timestamp));
+      backups.forEach((backup, index) => {
+        console.log(
+          chalk.gray(`${index + 1}.`), 
+          chalk.white(backup.themeName),
+          chalk.gray(`(${backup.date})`)
+        );
       });
 
       console.log(
-        chalk.gray(`\nUse ${chalk.cyan('vibecode restore <backup-name>')} to restore a backup`)
+        chalk.gray(`\nUse ${chalk.cyan('vibecode restore')} to interactively restore a backup`)
       );
       return;
     }
@@ -52,18 +55,21 @@ export async function restoreCommand(backup?: string, options?: RestoreOptions) 
           name: 'backup',
           message: 'Select a backup to restore:',
           choices: backups.map((b) => ({
-            name: b.replace('backup-', '').replace(/-/g, ':'),
-            value: b,
+            name: `${b.themeName} ${chalk.gray(`(${b.date})`)}`,
+            value: b.name,
           })),
         },
       ]);
       selectedBackup = chosen;
     }
 
-    // Find backup path
-    const backupPath = backups.find((b) => b === selectedBackup || b.includes(selectedBackup!));
+    // Find backup
+    const backupData = backups.find((b) => 
+      b.name === selectedBackup || 
+      b.themeName.toLowerCase().includes(selectedBackup!.toLowerCase())
+    );
 
-    if (!backupPath) {
+    if (!backupData) {
       console.log(chalk.red(`Backup not found: ${selectedBackup}`));
       process.exit(1);
     }
@@ -73,7 +79,7 @@ export async function restoreCommand(backup?: string, options?: RestoreOptions) 
       {
         type: 'confirm',
         name: 'confirm',
-        message: 'This will overwrite your current VSCode configuration. Continue?',
+        message: `Restore settings from before applying "${backupData.themeName}"?`,
         default: false,
       },
     ]);
@@ -85,14 +91,10 @@ export async function restoreCommand(backup?: string, options?: RestoreOptions) 
 
     // Restore backup
     spinner.start('Restoring backup...');
-    const fullBackupPath = require('path').join(
-      (await import('@vibecode/core')).pathManager.getBackupsDir(),
-      backupPath
-    );
-    await configManager.restoreConfiguration(fullBackupPath);
+    await configManager.restoreConfiguration(backupData.path);
     spinner.succeed('Backup restored successfully');
 
-    console.log(chalk.green('\n✨ Your VSCode configuration has been restored!'));
+    console.log(chalk.green(`\n✨ Settings restored from before "${backupData.themeName}"!`));
     console.log(chalk.yellow('\n⚠️  Please restart VSCode to see the changes.'));
   } catch (error: any) {
     spinner.fail('Failed to restore backup');

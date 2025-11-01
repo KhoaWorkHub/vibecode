@@ -125,7 +125,7 @@ export class ThemeManager {
 
     // Backup current configuration
     if (options.backup) {
-      await configManager.backupConfiguration();
+      await configManager.backupConfiguration(theme.name);
     }
 
     // Apply settings
