@@ -136,6 +136,11 @@ export async function createCommand(name?: string, options?: CreateOptions) {
       console.log(chalk.cyan(`\nUse ${chalk.bold(`vibecode apply ${themeId}`)} to apply it.`));
     } else {
       // Quick create with current settings
+      if (!themeName) {
+        console.error(chalk.red('❌ Theme name is required'));
+        process.exit(1);
+      }
+
       themeId = themeName.toLowerCase().replace(/\s+/g, '-');
 
       spinner.start('Creating theme from current settings...');
