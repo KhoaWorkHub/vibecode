@@ -169,6 +169,7 @@ export class ConfigManager {
     name: string;
     path: string;
     themeName: string;
+    actualTheme: string;
     timestamp: string;
     date: string;
   }>> {
@@ -187,20 +188,30 @@ export class ConfigManager {
       backups.map(async (backup) => {
         const backupPath = `${backupDir}/${backup}`;
         const metadataPath = `${backupPath}/metadata.json`;
+        const settingsPath = `${backupPath}/settings.json`;
         
-        let metadata = {
+        const metadata = {
           themeName: backup,
+          actualTheme: 'Unknown',
           timestamp: '',
           date: 'Unknown',
         };
 
         if (await fs.pathExists(metadataPath)) {
           const meta = await fs.readJson(metadataPath);
-          metadata = {
-            themeName: meta.themeName || backup,
-            timestamp: meta.timestamp || '',
-            date: meta.date || new Date(meta.timestamp).toLocaleString() || 'Unknown',
-          };
+          metadata.themeName = meta.themeName || backup;
+          metadata.timestamp = meta.timestamp || '';
+          metadata.date = meta.date || new Date(meta.timestamp).toLocaleString() || 'Unknown';
+        }
+
+        // Read actual theme from backup settings
+        if (await fs.pathExists(settingsPath)) {
+          try {
+            const settings = await fs.readJson(settingsPath);
+            metadata.actualTheme = settings['workbench.colorTheme'] || 'VS Code Default (Dark)';
+          } catch (e) {
+            // Ignore errors
+          }
         }
 
         return {

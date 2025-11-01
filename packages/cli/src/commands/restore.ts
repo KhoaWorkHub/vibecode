@@ -26,8 +26,9 @@ export async function restoreCommand(backup?: string, options?: RestoreOptions) 
       backups.forEach((backup, index) => {
         console.log(
           chalk.gray(`${index + 1}.`), 
-          chalk.white(backup.themeName),
-          chalk.gray(`(${backup.date})`)
+          chalk.white(`Before applying "${backup.themeName}"`),
+          chalk.gray(`→ Contains: ${backup.actualTheme}`),
+          chalk.dim(`(${backup.date})`)
         );
       });
 
@@ -55,7 +56,7 @@ export async function restoreCommand(backup?: string, options?: RestoreOptions) 
           name: 'backup',
           message: 'Select a backup to restore:',
           choices: backups.map((b) => ({
-            name: `${b.themeName} ${chalk.gray(`(${b.date})`)}`,
+            name: `Before "${b.themeName}" ${chalk.gray(`(contains: ${b.actualTheme})`)}`,
             value: b.name,
           })),
         },
@@ -79,7 +80,7 @@ export async function restoreCommand(backup?: string, options?: RestoreOptions) 
       {
         type: 'confirm',
         name: 'confirm',
-        message: `Restore settings from before applying "${backupData.themeName}"?`,
+        message: `Restore "${backupData.actualTheme}" theme? (from before applying "${backupData.themeName}")`,
         default: false,
       },
     ]);
@@ -94,7 +95,8 @@ export async function restoreCommand(backup?: string, options?: RestoreOptions) 
     await configManager.restoreConfiguration(backupData.path);
     spinner.succeed('Backup restored successfully');
 
-    console.log(chalk.green(`\n✨ Settings restored from before "${backupData.themeName}"!`));
+    console.log(chalk.green(`\n✨ Restored "${backupData.actualTheme}" theme!`));
+    console.log(chalk.gray(`   (from backup before applying "${backupData.themeName}")`));
     console.log(chalk.yellow('\n⚠️  Please restart VSCode to see the changes.'));
   } catch (error: any) {
     spinner.fail('Failed to restore backup');
